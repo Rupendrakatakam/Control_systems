@@ -1,26 +1,34 @@
 #include "iostream"
 #include "unordered_map"
+#include <array>
+#include <queue>
+#include <unordered_map>
+#include "vector"
+#include "queue"
 
 using namespace std;
+struct val
+{
+    double x,y,dist = 0;  
+};
 
+double compare(val a, val b){
+    double diff =  a.x - b.x;
+    return diff;
+}
 int main(){
-    std::cout << "dc" << std::endl;
+    int map[5][5] = {{0,0,0,0,0},
+                     {0,1,0,0,0},
+                     {0,0,2,0,0},
+                     {0,0,0,0,0},
+                     {0,0,0,0,0},}; 
+    // priority_queue<int>
+    vector<val> openList;
+    val a = {5, 0, 0};
+    val b = {9, 0, 0};
+    double x = compare(a, b);
 
-    int n =5;
-    int m =5;
-    int map[n][m] = {{1,0,0,0,0},
-                     {1,0,0,0,9},
-                     {1,0,5,0,0},
-                     {1,0,0,7,0},
-                     {1,0,3,0,0},
-                     };
+    cout << "diff :" << x << endl;
 
-    cout << "val : " << map[1][1]<< endl;
-
-    for(int i = 0; i < n; i++){
-        for (int j =0; j < m; j++){
-            if(map[i][j] >= 5) cout << "hi" << endl;
-        }
-    }
     
 }
